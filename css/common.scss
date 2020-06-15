@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@import 'sassConfig';
+.color-main{color: $color-main;}
+.color-second{color: $color-second;}
+.text-main{color:$text-main;}
+.container{
+    width:$container;
+    margin: 0 auto;
+}
+//header
+.logo{
+    margin-top: 30px;
+    margin-bottom:30px;
+    img{display:block;}
+}
+//顶部的菜单
+.menu-link{
+    line-height:22px;
+    a,span,div{float:right;}
+    a{color:$text-gray;}
+    .link{
+        width:1px;
+        height:12px;
+        margin: 6px 11px 0;
+        background-color:#cfcfcf;
+    }
+}
+//语言菜单
+.lang{
+    width: 53px;
+    height:22px;
+    background-color:#ececec;
+    color:$text-gray;
+    text-align:center;
+    i {
+        display:inline-block;
+        width:10px;
+        height:10px;
+        background:url(../images/icon-bottom.png);
+        background-repeat:no-repeat;
+      //引入css3浏览器内核定义  
+      //@include webkit(box-sizing,border-box);
+      //@include webkit(transform,rotate(-45deg));
+    }
+}
+//clear 清除浮动
+.clear:after{
+    content:"";
+    display: block;
+    clear:both;
+}
+.pull-left{float:left;}
+.pull-right{float:right;}
