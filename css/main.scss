@@ -1,11 +1,20 @@
 @charset"UTF-8";
 @import "sassConfig";
+#slide-wrap{
+    position:relative;
+    overflow:hidden;
+}
 .slide-content{
     position: relative;
+    left:0;
+    //@include webkit(transition,all 0.5s linear 0s);
     li{
         float:left;
        
     }
+}
+.slide-contents{
+    @include webkit(transition,all 1s linear 0s);
 }
 .slide-nav{
     position:absolute; 
@@ -46,4 +55,193 @@
 }
 .slide-next{
     right:20px;
+}
+//图文列表
+.list-info{
+    padding:0 45px;
+    figure{
+        float:left;
+        width:33.33333%;
+        padding:0 25px;
+        @include webkit(box-sizing,border-box);
+    }
+    img{width:100%;}
+    figcaption{
+        padding: 24px 0 10px;
+        margin-bottom:11px;
+        font-size:18px;
+        border-bottom:1px solid #d9d9d9;
+        color:$text-main;
+    }
+    p{
+        line-height:22px;
+        color:$text-gray;
+    }
+}
+.more-link{
+    margin:55px auto 90px;
+    display:block;
+    width:108px;
+    height:35px;
+    border:1px solid #e8e8e8;
+    border-radius:100px;
+    color:$text-gray;
+    line-height:35px;
+    text-align:center;
+    @include webkit(transition,all .5s ease 0s);
+    &:hover{
+        background-color:$color-main;
+        color:#fff;
+        border-color:$color-main;
+    }
+}
+//朗朗公益版块
+.welfare{
+    margin-bottom:90px;
+    header{background-color:#efefef;}
+}
+.welfare-wrap{
+    display:flex;
+    height:570px;
+    .row{
+        flex:1;
+    }
+    .row:last-child{
+        .content-flex-small{order: 1;}
+        .content-flex-big{order:2;}
+    }
+    .content-flex{
+        display:flex;
+        flex-direction:column;
+        height:100%;
+    }
+    .content-flex-big{
+        flex:2;
+    }
+    .content-flex-small{
+        flex:1;
+    }
+    img{display:block;}
+    .content-dec{
+        padding:50px 48px 0 40px;
+        .title{
+            font-size:24px;
+        }
+        time{
+            display:block;
+            padding:14px 0 20px 0;
+            opacity:0.5;
+            filter: alpha(opacity=50) ;
+        }
+        .line{
+            display:block;
+            width:38px;
+            border-top:1px solid #cccccc;
+        }
+        .dec{
+            margin-top:33px;
+            line-height:24px;
+        }
+        .link-more{
+            margin-top:16px;
+        }
+    }
+    .color-white{
+        .title, time, .dec, .link-more{color:#fff};
+        .link-more{border-color:#fff;}
+    }
+}
+//医生
+.doctor{
+   padding:90px 0; 
+   background-color:#f6f6f6;
+   .img{
+       float:left;
+   }
+   .content{
+       margin-left:565px;
+   }
+   .swiper-pagination{
+       left:0;
+       right:0;
+       top:34px;
+       span{margin: 0 2px;}
+       .swiper-pagination-bullet{
+           width:8px;
+           height:3px;
+           background-color:#a0a0a0;
+           border-radius:0;
+           opacity: 1;
+           filter: alpha(opcity=100);
+       }
+       .swiper-pagination-bullet-active{background: #000000;}
+   }
+}
+.doctor-info{
+    .title{
+        padding-top:13px;
+        font-size:18px;
+    }
+    span{
+        display:block;
+        color:$text-gray;
+        padding:12px 0 19px ;
+    }
+    .line{
+        display:block;
+        width:38px;
+        border-top:1px solid #c5c5c5;
+    }
+    p{
+        padding:26px 0 22px;
+        line-height:21px;
+        color:$text-gray;
+    }
+    .link-more{
+        margin-left:-13px;
+        color:$text-main;
+        font-weight:bold;
+    }
+}
+ /*news-wrap*/
+ .news-wrap{
+    overflow:hidden;
+    padding-top:73px;
+    padding-bottom:102px;
+    .box{
+        margin-left:-15px;
+        margin-right:-15px;
+    }
+    .item{
+        float:left;
+        width:25%;
+        padding:0 15px;
+        @include webkit(box-sizing,border-box);
+    }
+    img{width:100%;display:block;}
+    .title{
+        padding-top:25px;
+        padding-bottom:13px;
+        font-size:18px;
+    }
+    time{
+        display:block;
+        padding-bottom:12px;
+        color:$text-gray;
+    }
+    .line{
+        display:block;
+        padding-bottom:20px;
+        width:50px;
+        border-top:1px solid #d9d9d9;
+    }
+    .dec{
+        color:$text-gray;
+        padding-bottom:22px;
+        line-height:22px;
+    }
+    .link-more{
+        opacity:0.4;
+        filter: alpha(opacity=40);
+    }
 }

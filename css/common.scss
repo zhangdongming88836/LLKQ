@@ -103,6 +103,7 @@ nav{
     ul{
         ul{
            display:block;
+           z-index: 3;
            @include webkit(transition, all 0.5s linear 0s);
            position:absolute;
             a{
@@ -260,3 +261,82 @@ body>footer{
  .text-left{text-align: left;}
  .tetx-right{text-align:right;}
  .text-center{text-align:center;}
+ //display
+ .display-none{
+     display:none;
+ }
+ //position
+ .p-r{position:relative;}
+ .p-a{position:absolute;}
+ /*tab-menu*/
+ .tab-menu{
+     text-align:center;
+    a{
+        padding:0 23px;
+        margin: 0 4px;
+        display:inline-block;
+        border:1px solid #e2e2e2;
+        line-height:32px;
+        &.current{
+            background-color:$text-gray;
+            border-color:$text-gray;
+            color:#fff;
+        }
+    }
+ }
+//主体内容的标题
+.main-column{
+ // padding:90px 0 80px 0;  
+  text-align:center;
+   h3{
+      font-size:26px;
+      font-weight:normal;
+  }
+  p{
+      margin-top:12px;
+      color:$text-gray;
+      text-transform:uppercase;
+  }
+  span{
+      display:inline-block;
+      height:10px;
+      margin:0 9px;
+      border-left:1px solid #cfcfcf;
+  }
+} 
+//加载提示
+@keyframes loading {
+    0%{ transform:rotate(0deg)}
+   100%{transform:rotate(360deg)}
+} 
+.loading-wait{
+    padding:15px 0;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:normal;
+    .loading-icon{
+        margin-top:20px;
+        @include webkit(transform,rotate(0deg));
+        animation:loading 1s ease infinite;
+    }
+} 
+//for循环定义 padding偏移值
+@for $i from 1 through 100{
+    .padding-top-#{$i} { padding-top:(1px * $i); }
+    .padding-bottom-#{$i} {padding-bottom:(1px * $i);}
+} 
+/*查看更多按钮*/ 
+.link-more{
+    display:block;
+    width:92px;
+    height:29px;
+    border:1px solid #676767;
+    text-align:center;
+    line-height:26px;
+    .iconfont{
+        position:relative;
+        top:1px;
+        font-weight:700;
+    }
+    &.border-none{border:none;}
+}  
