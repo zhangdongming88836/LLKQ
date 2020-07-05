@@ -9,6 +9,13 @@ $text-main: #010101;
 $text-gray:#a0a0a0;
 //主体的宽度
 $container:1200px;
+%clear{
+    &:after{
+        content:"";
+        display: block;
+        clear:both;
+    }
+}
 //定义浏览器内核属性
 @mixin webkit($type,$value){
     -webkit-#{$type}:$value;
@@ -16,4 +23,11 @@ $container:1200px;
     -ms-#{$type}:$value;
     -o-#{$type}:$value;
     #{$type}:$value;
+}
+//文本超出省略号方法
+@mixin ell($number){
+    display:-webkit-box;
+    -webkit-line-clamp:$number;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
 }

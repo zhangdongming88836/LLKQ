@@ -259,7 +259,7 @@ body>footer{
 .pull-right{float:right;}
 //公共文本对齐
  .text-left{text-align: left;}
- .tetx-right{text-align:right;}
+ .text-right{text-align:right;}
  .text-center{text-align:center;}
  //display
  .display-none{
@@ -339,4 +339,116 @@ body>footer{
         font-weight:700;
     }
     &.border-none{border:none;}
-}  
+} 
+//占位图显示
+.img-cover{
+    background:no-repeat;
+    background-position:center;
+    background-size:cover;
+}
+/*面包屑*/
+.crumbs{
+    padding:84px 0;
+    background:url(../images/img.jpg) no-repeat center;
+    color:#fff;
+    .column-name{
+        margin-bottom:13px;
+        font-size:30px;
+    }
+    span{padding:0 5px;}
+    a{color:#fff;}
+}
+.category-menu{
+    border-bottom:1px solid #f1f1f1;
+    background-color:#fff;
+    li{
+        float:left;
+        margin-right:18px;
+    }
+    a{
+        display:block;
+        padding:0 15px;
+        margin-bottom:-1px;
+        line-height:49px;
+        font-size:14px;
+        &.current{
+            color:$color-main;
+          border-bottom:1px solid $color-main;
+        }
+    }
+}
+/*自动分列*/
+.row-container{
+     overflow:hidden;
+     .row-wrap{@extend %clear;}
+     div[class^=col-item]{
+        float:left;
+        @include webkit(box-sizing,border-box);
+    }
+    &.gutter-15{
+         div[class^=col-item]{padding:0 15px;}
+         .row-wrap{margin:0 -15px;}
+    }
+    .col-item-3{width:25%;}
+    .col-item-4{width:33.33333%;}
+    .col-item-6{width:50%;}
+    .col-item-12{width:100%;}
+}
+/*图文内容样式*/
+.figure-content{
+
+    .title{
+        //padding-bottom:13px;
+        font-size:18px;
+        @include ell(1);
+    }
+    time{
+        display:block;
+        padding-bottom:12px;
+        color:$text-gray;
+    }
+    .line{
+        display:block;
+        padding-bottom:20px;
+        width:50px;
+        border-top:1px solid #d9d9d9;
+    }
+    .dec{
+        color:$text-gray;
+        margin-bottom:22px;
+        line-height:22px;
+        @include ell(2);
+    }
+    .link-more{
+        opacity:0.4;
+        filter: alpha(opacity=40);
+    }
+}
+/*页码 pagination*/
+.pagination{
+    margin-bottom:120px;
+    text-align:center;
+    span,a{
+        display:inline-block;
+        width:35px;
+        height:35px;
+        margin:0 7px;
+        background-color:#f5f5f5;
+        text-align:center;
+        line-height:35px;
+        font-size:14px;
+        color:#a0a0a0;
+    }
+    span{
+        background-color:$color-main;
+        color:#fff;
+    }
+    &.shop-module{
+        a{
+           background-color:#eeeeee;
+        }
+    }
+ }
+//background-color
+.bg-color-f7 {background-color:#f7f7f7;}
+body > header{background-color:#fff;}

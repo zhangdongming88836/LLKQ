@@ -77,8 +77,10 @@ function loadNewsData(params){
                     console.log(time);
                     html +=`  
                     <div class="item">
-                        <img src="${item.imgUrl}" alt="">
-                        <h4 class="${item.title}">${item.title}</h4>
+                        <div class="img-cover" style="background-image:url(${item.imgUrl})">
+                        <img src="../images/blank/indexNews.png" alt="${item.title}">
+                        </div>
+                        <h4 class="title">${item.title}</h4>
                         <time datatime="${item.time}" pubtime="${time[0]}">${time[0]}</time>
                         <i class="line"></i> 
                         <p class="dec">${item.dec}</p> 
